@@ -21,7 +21,7 @@ var canvas = document.getElementById('maze');
 var pen = canvas.getContext('2d');
 pen.fillStyle = '#DDDDDD';
 
-var size = 3;
+var size = 1;
 
 var maze = require('amazejs');
 var m = new maze.Backtracker(canvas.width / size, canvas.height / size);
