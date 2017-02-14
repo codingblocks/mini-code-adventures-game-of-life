@@ -24,7 +24,7 @@ gulp.task('styles', function () {
 
 // Styles Dist
 gulp.task('styles:dist', function () {
-  var manifest = require('../../dist/image-manifest');
+  //var manifest = require('../../dist/image-manifest');
   return gulp.src('app/less/app.less')
     // Leaving out recess support due to string interpolation missing in less v1.3 (which recess is dependent on)
     // .pipe(recess())
@@ -33,7 +33,7 @@ gulp.task('styles:dist', function () {
       loadPath: [config.bower]
     }))
     // .pipe(prefix('last 1 version'))  // add vendor prefixes if necessary
-    .pipe(fingerprint(manifest, {verbose: true}))
+    //.pipe(fingerprint(manifest, {verbose: true}))
     .pipe(csso())  // minify css
     .pipe(gulp.dest(config.dist + '/styles'))
     .pipe(size());
